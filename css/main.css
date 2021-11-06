@@ -1,0 +1,266 @@
+:root {
+  --vermelho: #e50914;
+  --preto: #141414;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*#region Inicio Header */
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  header .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0.75rem;
+  }
+}
+
+header .logo {
+  color: var(--vermelho);
+  font-family: "Arial Black", Times;
+  font-size: 40px;
+}
+
+header nav a {
+  color: #aaa;
+  text-decoration: none;
+  margin-right: 1rem;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+/*#endregion Fim Header */
+/* #region Body */
+body {
+  background: var(--preto);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+}
+
+@media screen and (max-width: 560px) {
+  .btn {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.btn i {
+  margin-right: 0.5rem;
+}
+
+/* #region Bootcamp principal */
+.bootcamp-principal {
+  font-size: 1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0))), url("../img/curso-principal.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("../img/curso-principal.jpg");
+  height: 400px;
+  background-size: cover;
+  padding-bottom: 5rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.bootcamp-principal .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 500px;
+}
+
+.bootcamp-principal .titulo {
+  font-size: 2rem;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.bootcamp-principal .descricao {
+  margin-bottom: 2rem;
+}
+
+.bootcamp-principal .btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+}
+
+.bootcamp-principal .btn:hover {
+  background: white;
+  color: black;
+}
+
+/* #endregion Bootcamp principal */
+/* #region Lista Bootcamps - Carousel */
+.carousel-bootcamps {
+  padding: 8rem 0 3rem;
+  margin-top: -6.5rem;
+  position: relative;
+  z-index: 1;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0)), color-stop(6rem, var(--preto)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, var(--preto) 6rem);
+}
+
+.carousel-bootcamps .titulo {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.carousel-bootcamps small {
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+
+.carousel-bootcamps .row-carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-bootcamps .owl-carousel .owl-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.carousel-bootcamps .item {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.25rem 1rem;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+}
+
+.carousel-bootcamps .item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.carousel-bootcamps .item h4 {
+  margin: 1rem 0 0.5rem;
+}
+
+.carousel-bootcamps .item p {
+  font-size: 0.75em;
+  font-weight: 300;
+  opacity: 0.75;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.carousel-bootcamps .item .btn {
+  background: rgba(255, 255, 255, 0.075);
+  color: white;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.carousel-bootcamps .item .btn:hover {
+  background: var(--vermelho);
+}
+
+.box-bootcamp {
+  max-width: 130px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto;
+}
+
+/* #endregion Lista Bootcamps - Carousel */
+/* #endregion Body */
