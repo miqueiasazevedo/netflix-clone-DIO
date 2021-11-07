@@ -2,8 +2,6 @@
   --vermelho: #e50914;
   --preto: #141414;
 }
-$vermelho: #e50914;
-$preto: #141414;
 
 @import "reset.scss";
 
@@ -53,6 +51,8 @@ body {
   color: white;
 }
 
+/* #region Classes Gerais */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -75,6 +75,8 @@ body {
     margin-right: 0.5rem;
   }
 }
+
+/* #endregion Classes Gerais */
 
 /* #region Bootcamp principal */
 
@@ -222,5 +224,142 @@ body {
 }
 
 /* #endregion Lista Bootcamps - Carousel */
+
+/* #region Modal */
+.blurred {
+  filter: blur(5px);
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+
+  transition: 0.3s linear;
+
+  &.active {
+    visibility: visible;
+    z-index: 99999;
+    opacity: 1;
+
+    .modal {
+      transform: translateY(0rem);
+    }
+  }
+
+  .modal {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    max-height: 80vh;
+    background: var(--preto);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+
+    transform: translateY(-2rem);
+    transition: 0.3s linear;
+  }
+
+  .modal-header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    position: sticky;
+    top: 0;
+
+    .close {
+      color: white;
+      cursor: pointer;
+      transition: 0.3s linear all;
+
+      &:hover {
+        color: var(--vermelho);
+      }
+    }
+  }
+
+  .modal-content {
+    display: flex;
+    flex-flow: row nowrap;
+
+    overflow-y: auto;
+
+    @media screen and (max-width: 720px) {
+      flex-flow: column nowrap;
+    }
+
+    .video-content {
+      flex-grow: 3;
+      iframe {
+        width: 100%;
+      }
+    }
+
+    .lista-aulas {
+      flex-grow: 1;
+      max-width: 300px;
+      max-height: 100%;
+
+      padding: 0 0 0 1rem;
+
+      ul {
+        height: 100%;
+      }
+
+      li {
+        list-style: none;
+
+        padding: 0.5em 0.75em;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+          a {
+            color: white;
+          }
+        }
+
+        a {
+          color: rgb(179, 179, 179);
+          text-decoration: none;
+
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+
+        i {
+          margin-right: 0.5em;
+          font-size: 0.8em;
+        }
+
+        small {
+          margin-left: auto;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+/* #endregion Modal */
 
 /* #endregion Body */

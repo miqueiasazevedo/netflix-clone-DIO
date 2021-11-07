@@ -71,6 +71,7 @@ body {
   color: white;
 }
 
+/* #region Classes Gerais */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -97,6 +98,7 @@ body {
   margin-right: 0.5rem;
 }
 
+/* #endregion Classes Gerais */
 /* #region Bootcamp principal */
 .bootcamp-principal {
   font-size: 1rem;
@@ -263,4 +265,180 @@ body {
 }
 
 /* #endregion Lista Bootcamps - Carousel */
+/* #region Modal */
+.blurred {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.modal-container.active {
+  visibility: visible;
+  z-index: 99999;
+  opacity: 1;
+}
+
+.modal-container.active .modal {
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+}
+
+.modal-container .modal {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  height: auto;
+  max-height: 80vh;
+  background: var(--preto);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.modal-container .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.modal-container .modal-header .close {
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 0.3s linear all;
+  transition: 0.3s linear all;
+}
+
+.modal-container .modal-header .close:hover {
+  color: var(--vermelho);
+}
+
+.modal-container .modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 720px) {
+  .modal-container .modal-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
+.modal-container .modal-content .video-content {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+}
+
+.modal-container .modal-content .video-content iframe {
+  width: 100%;
+}
+
+.modal-container .modal-content .lista-aulas {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 300px;
+  max-height: 100%;
+  padding: 0 0 0 1rem;
+}
+
+.modal-container .modal-content .lista-aulas ul {
+  height: 100%;
+}
+
+.modal-container .modal-content .lista-aulas li {
+  list-style: none;
+  padding: 0.5em 0.75em;
+}
+
+.modal-container .modal-content .lista-aulas li:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-container .modal-content .lista-aulas li:hover a {
+  color: white;
+}
+
+.modal-container .modal-content .lista-aulas li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.modal-container .modal-content .lista-aulas li i {
+  margin-right: 0.5em;
+  font-size: 0.8em;
+}
+
+.modal-container .modal-content .lista-aulas li small {
+  margin-left: auto;
+  font-size: 0.8em;
+}
+
+/* #endregion Modal */
 /* #endregion Body */

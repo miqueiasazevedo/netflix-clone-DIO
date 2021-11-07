@@ -24,3 +24,25 @@ $(".owl-carousel").owlCarousel({
     },
   },
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var cursos = document.querySelectorAll(".item .btn");
+
+  console.log(cursos);
+  cursos.forEach((curso) => {
+    curso.addEventListener("click", function () {
+      var targetModal = curso.dataset.target;
+      var modal = document.querySelector("[data-modal='" + targetModal + "']");
+
+      modal.classList.add("active");
+      document.getElementById("main").classList.add("blurred");
+
+      modal.onclick = function ({ target }) {
+        if (!target.closest(".modal") || target.closest(".close")) {
+          modal.classList.remove("active");
+          document.getElementById("main").classList.remove("blurred");
+        }
+      };
+    });
+  });
+});
